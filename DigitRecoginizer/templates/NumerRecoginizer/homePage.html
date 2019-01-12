@@ -3,22 +3,24 @@
 {% load static %}
 
 {% block content %}
+<h1>Hand Written Numeric Digit Recognition</h1>
+{% if uploaded_file_url %}
+<h3>You have entered : <span style="color:red">{{ uploaded_file_url }}</span></h3>
+{% endif %}
 
 <form method="post" enctype="multipart/form-data" onsubmit="return save()">
     {% csrf_token %}
-    <canvas id="can" width="200" height="200" style="position:absolute;top:10%;left:10%;border:2px solid; backgr"></canvas>
+    <canvas id="can" width="200" height="200" style="position:absolute;top:20%;left:10%;border:2px solid; "></canvas>
     <br>
     <input type="hidden" name="myfile" id="hiddenfile">
-    <input type="submit" value="Predict" id="btn" size="50" style="position:absolute;top:55%;left:10%;" >
-    <a href="/"><input type="button" value="Reset" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:18%;"></a>
+    <input type="submit" value="Submit" id="btn" size="50" style="position:absolute;top:55%;left:10%;" >
+    <a href="/"><input type="button" value="Reset" id="clr" size="23" onclick="" style="position:absolute;top:55%;left:18%;"></a>
 
 
     <!--<button type="submit">Upload</button>-->
 </form>
 
-{% if uploaded_file_url %}
-<p>You have entered : <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
-{% endif %}
+
 
 
 {% endblock %}
