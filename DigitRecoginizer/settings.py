@@ -55,7 +55,7 @@ ROOT_URLCONF = 'DigitRecoginizer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\Administrator\PycharmProjects\DigitRecoginizer\DigitRecoginizer\templates'],
+        'DIRS': [os.path.join(BASE_DIR,'DigitRecoginizer/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
